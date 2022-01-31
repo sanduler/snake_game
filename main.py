@@ -1,8 +1,9 @@
 # Name: Ruben Sanduleac
 # Date: January 31st, 2022
 # Description: The main goal of the game is to create a fully functional snake game.
-
+import time
 from turtle import Turtle, Screen
+from snake import Snake
 
 # create the screen for the game.
 import black as black
@@ -12,20 +13,21 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
+screen.tracer(0)
 
-snake = Turtle("square")
-snake.color("White")
-
-# create a tuple for the position of the three snake objects
-start_pos = [(0, 0), (-20, 0), (-40, 0)]
-
-# use a for loop to create three snake object and set them to correct position form the start_pos
-for position in start_pos:
-    snake = Turtle("square")
-    snake.color("White")
-    snake.goto(position)
+snake1 = Snake()
 
 
+# while the game is on the while loop will continue to work
+game_is_on = True
+
+while game_is_on:
+    # set the screen to update after the movement has been run
+    screen.update()
+    # create a small delay
+    time.sleep(0.1)
+    snake1.create_snake()
+    snake1.movement()
 
 
 # screen doesn't close automatically
