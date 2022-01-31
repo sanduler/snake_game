@@ -15,8 +15,8 @@ screen.bgcolor("black")
 screen.title("Snake Game")
 screen.tracer(0)
 
-snake1 = Snake()
-
+# create a snake object from Snake class
+snake = Snake()
 
 # while the game is on the while loop will continue to work
 game_is_on = True
@@ -26,8 +26,7 @@ while game_is_on:
     screen.update()
     # create a small delay
     time.sleep(0.1)
-    snake1.create_snake()
-    snake1.movement()
+    snake.movement()
 
 
 # screen doesn't close automatically
