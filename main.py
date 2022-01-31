@@ -26,16 +26,29 @@ for position in start_pos:
     new_snake.goto(position)
     snake.append(new_snake)
 
-# screen.update()
 
-# TODO: Create animation and key controls on the screen.
+# while the game is on the while loop will continue to work
 game_is_on = True
 
 while game_is_on:
+    # set the screen to update after the movement has been run
     screen.update()
+    # create a small delay
     time.sleep(0.1)
-    for snk in snake:
-        snk.forward(20)
+    # for loop that give the ability for the snake to turn.
+    # start = -2, stop = 0, step = 1
+    # (length = 3 - 1) = start = 2, the stop is located at position 0 and the snake moves one step at time
+    for snake_num in range(len(snake)-1, 0, -1):
+        # get the new x and y location by looking into the list sub 1
+        # by moving the snake block the next position.
+        new_x = snake[snake_num - 1].xcor()
+        new_y = snake[snake_num - 1].ycor()
+        # set the new location of the snake
+        snake[snake_num].goto(new_x, new_y)
+    # move the snake forward by 20 pixels
+    snake[0].forward(20)
+    # turn the snake by 20 pixels
+    snake[0].right(90)
 
 # screen doesn't close automatically
 screen.exitonclick()
