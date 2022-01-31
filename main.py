@@ -13,6 +13,19 @@ screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
 
+snake = Turtle("square")
+snake.color("White")
+
+# create a tuple for the position of the three snake objects
+start_pos = [(0, 0), (-20, 0), (-40, 0)]
+
+# use a for loop to create three snake object and set them to correct position form the start_pos
+for position in start_pos:
+    snake = Turtle("square")
+    snake.color("White")
+    snake.goto(position)
+
+
 
 
 # screen doesn't close automatically
