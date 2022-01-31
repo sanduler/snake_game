@@ -17,7 +17,11 @@ screen.tracer(0)
 
 # create a snake object from Snake class
 snake = Snake()
-
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
 
 # while the game is on the while loop will continue to work
 game_is_on = True
