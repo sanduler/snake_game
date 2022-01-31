@@ -10,6 +10,7 @@ class Snake:
         """Function prototype uses to create a blank list and intilize the creation of the snake"""
         self.snake = []
         self.create_snake()
+        self.head = self.snake[0]
 
     def create_snake(self):
         """create_snake uses a for loop to create three snake object
@@ -34,20 +35,20 @@ class Snake:
             # set the new location of the snake
             self.snake[snake_num].goto(new_x, new_y)
         # move the snake forward by 20 pixels
-        self.snake[0].forward(MOVE_DIS)
+        self.head.forward(MOVE_DIS)
         # turn the snake by 20 pixels
         # self.snake[0].right(90)
 
     def up(self):
-        self.snake[0].setheading(90)
+        self.head.setheading(90)
 
     def down(self):
-        self.snake[0].setheading(-90)
+        self.head.setheading(270)
 
     def left(self):
-        self.snake[0].setheading(180)
+        self.head.setheading(180)
 
     def right(self):
-        self.snake[0].setheading(0)
+        self.head.setheading(0)
 
 
