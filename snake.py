@@ -4,6 +4,13 @@ from turtle import Turtle
 START_POS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DIS = 20
 
+# direction
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
+
+
 class Snake:
     """Create a three segment snake and all the functionality"""
     def __init__(self):
@@ -40,15 +47,31 @@ class Snake:
         # self.snake[0].right(90)
 
     def up(self):
-        self.head.setheading(90)
+        """Set the direction of the snake to UP and check so
+        the snake can't go back DOWN
+        """
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
 
     def down(self):
-        self.head.setheading(270)
+        """Set the direction of the snake to DOWN and check so
+        the snake can't go back UP
+        """
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
 
     def left(self):
-        self.head.setheading(180)
+        """Set the direction of the snake to LEFT and check so
+        the snake can't go back RIGHT
+        """
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
 
     def right(self):
-        self.head.setheading(0)
+        """Set the direction of the snake to RIGHT and check so
+        the snake can't go back LEFT
+        """
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
 
 
