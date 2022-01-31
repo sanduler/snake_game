@@ -18,6 +18,7 @@ screen.tracer(0)
 # create a snake object from Snake class
 snake = Snake()
 
+
 # while the game is on the while loop will continue to work
 game_is_on = True
 
