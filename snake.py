@@ -37,3 +37,17 @@ class Snake:
         self.snake[0].forward(MOVE_DIS)
         # turn the snake by 20 pixels
         # self.snake[0].right(90)
+
+    def up(self):
+        self.snake[0].setheading(90)
+
+    def down(self):
+        self.snake[0].setheading(-90)
+
+    def left(self):
+        self.snake[0].setheading(180)
+
+    def right(self):
+        self.snake[0].setheading(0)
+
+
