@@ -25,7 +25,7 @@ for position in start_pos:
     snake.color("White")
     snake.goto(position)
 
-
+# TODO: Create animation and key controls on the screen.
 
 
 # screen doesn't close automatically
