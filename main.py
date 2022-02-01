@@ -4,6 +4,7 @@
 import time
 from turtle import Screen
 from food import Food
+from score import Scoreboard
 from snake import Snake
 
 COLLISION_DISTANCE = 15
@@ -20,6 +21,8 @@ screen.tracer(0)
 snake = Snake()
 # create a food object on a main screen
 food = Food()
+# create the scoreboard to be displayed on top of the screen.
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(snake.up, "Up")
