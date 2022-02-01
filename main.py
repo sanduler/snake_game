@@ -45,5 +45,6 @@ while game_is_on:
     # away from the food then
     if snake.head.distance(food) < COLLISION_DISTANCE:
         food.new_location()
+        scoreboard.increase_score()
 # screen doesn't close automatically
 screen.exitonclick()
