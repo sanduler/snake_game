@@ -7,9 +7,8 @@ from food import Food
 from snake import Snake
 
 COLLISION_DISTANCE = 15
-# create the screen for the game.
-import black as black
 
+# create the screen for the game.
 screen = Screen()
 # set up the size for the screen.
 screen.setup(width=600, height=600)
