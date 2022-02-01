@@ -15,32 +15,29 @@ class Snake:
 
     def __init__(self):
         """Function prototype uses to create a blank list and intilize the creation of the snake"""
-        self.snake = []
+        self.snake_segment = []
         self.create_snake()
-        self.head = self.snake[0]
+        self.head = self.snake_segment[0]
 
     def create_snake(self):
-        """create_snake uses a for loop to create three snake object
-        and set them to correct position form the start_pos"""
+        """create_snake uses a for loop to create snake object
+        and set them to correct position form the start_pos in the add_snake
+        function"""
         for position in START_POS:
-            new_snake = Turtle("square")
-            new_snake.color("White")
-            new_snake.penup()
-            new_snake.goto(position)
-            self.snake.append(new_snake)
+            self.add_snake(position)
 
     def movement(self):
         """movement function uses a for loop that gives
         the ability for the snake to turn. Start = -2, stop = 0,
         step = 1 (length = 3 - 1) = start = 2, the stop is
         located at position 0 and the snake moves one step at time"""
-        for snake_num in range(len(self.snake) - 1, 0, -1):
+        for snake_num in range(len(self.snake_segment) - 1, 0, -1):
             # get the new x and y location by looking into the list sub 1
             # by moving the snake block the next position.
-            new_x = self.snake[snake_num - 1].xcor()
-            new_y = self.snake[snake_num - 1].ycor()
+            new_x = self.snake_segment[snake_num - 1].xcor()
+            new_y = self.snake_segment[snake_num - 1].ycor()
             # set the new location of the snake
-            self.snake[snake_num].goto(new_x, new_y)
+            self.snake_segment[snake_num].goto(new_x, new_y)
         # move the snake forward by 20 pixels
         self.head.forward(MOVE_DIS)
         # turn the snake by 20 pixels
@@ -73,5 +70,17 @@ class Snake:
         """
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def add_snake(self, position):
+        """Create a new snake segment and set the positionto the end"""
+        new_snake = Turtle("square")
+        new_snake.color("White")
+        new_snake.penup()
+        new_snake.goto(position)
+        self.snake_segment.append(new_snake)
+
+    def extend(self):
+        """extend the snake by adding a segment to the tail"""
+        self.add_snake(self.snake_segment[-1].position())
 
 
