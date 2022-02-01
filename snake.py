@@ -1,11 +1,12 @@
 from turtle import Turtle
 
-
 START_POS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DIS = 20
 
+
 class Snake:
     """Create a three segment snake and all the functionality"""
+
     def __init__(self):
         """Function prototype uses to create a blank list and intilize the creation of the snake"""
         self.snake = []
