@@ -48,5 +48,12 @@ while game_is_on:
         food.new_location()
         # increase the score after the snake head collides with the food
         scoreboard.increase_score()
+
+    # detect collisions with head if borders are hit then the loop breaks and the game is over
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
+        # break the loop and end the game
+        game_is_on = False
+        # call the game_over function from score.py to prompt the game_over prompt
+        scoreboard.game_over()
 # screen doesn't close automatically
 screen.exitonclick()

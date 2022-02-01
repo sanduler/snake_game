@@ -1,7 +1,7 @@
 from turtle import Turtle
 
 # Determine the font, size and style of the scoreboard
-FONTS = ("Arial", 20, "bold")
+FONTS = ("Arial", 20, "normal")
 # Alignment of the scoreboard on the screen
 ALIGNMENT = "center"
 # Color of the scoreboard
@@ -30,6 +30,13 @@ class Scoreboard(Turtle):
         """this function is responsible for printing the score
         and aligning and font"""
         self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONTS)
+
+    def game_over(self):
+        """Game over function which is called when the user crashes into the wall
+        or becomes to long and crashes into itself."""
+        # set the position to the top of the screen
+        self.setposition(0, 0)
+        self.write("Game Over", align=ALIGNMENT, font=FONTS)
 
     def increase_score(self):
         """this function is responsible for incrementing the score
