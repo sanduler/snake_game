@@ -16,7 +16,7 @@ class Food(Turtle):
         self.color("red")
         # set speed to fastest
         self.speed("fastest")
-        # generate a random point on x and y axis
+        # generate a random point on x and y-axis
         rand_x = random.randint(-280, 280)
         rand_y = random.randint(-280, 280)
         # move the Food to the random point

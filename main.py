@@ -2,7 +2,8 @@
 # Date: January 31st, 2022
 # Description: The main goal of the game is to create a fully functional snake game.
 import time
-from turtle import Turtle, Screen
+from turtle import Screen
+from food import Food
 from snake import Snake
 
 # create the screen for the game.
@@ -17,6 +18,9 @@ screen.tracer(0)
 
 # create a snake object from Snake class
 snake = Snake()
+# create a food object on a main screen
+food = Food()
+
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
@@ -33,6 +37,8 @@ while game_is_on:
     time.sleep(0.1)
     snake.movement()
 
-
+    #detect collisions with Food
+    if snake.head.distance(food) < 15:
+        print("Collide")
 # screen doesn't close automatically
 screen.exitonclick()
