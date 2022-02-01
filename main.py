@@ -6,6 +6,7 @@ from turtle import Screen
 from food import Food
 from snake import Snake
 
+COLLISION_DISTANCE = 15
 # create the screen for the game.
 import black as black
 
@@ -37,8 +38,10 @@ while game_is_on:
     time.sleep(0.1)
     snake.movement()
 
-    #detect collisions with Food
-    if snake.head.distance(food) < 15:
-        print("Collide")
+    # detect collisions with Food
+    # if the snake head (first turtle) is less than 15 pixels
+    # away from the food then
+    if snake.head.distance(food) < COLLISION_DISTANCE:
+        food.new_location()
 # screen doesn't close automatically
 screen.exitonclick()
