@@ -4,6 +4,7 @@
 import time
 from turtle import Screen
 from food import Food
+from score import Scoreboard
 from snake import Snake
 
 COLLISION_DISTANCE = 15
@@ -20,6 +21,8 @@ screen.tracer(0)
 snake = Snake()
 # create a food object on a main screen
 food = Food()
+# create the scoreboard to be displayed on top of the screen.
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(snake.up, "Up")
@@ -41,6 +44,9 @@ while game_is_on:
     # if the snake head (first turtle) is less than 15 pixels
     # away from the food then
     if snake.head.distance(food) < COLLISION_DISTANCE:
+        # function call to randomly assign the food location on the window
         food.new_location()
+        # increase the score after the snake head collides with the food
+        scoreboard.increase_score()
 # screen doesn't close automatically
 screen.exitonclick()
