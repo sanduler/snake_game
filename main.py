@@ -44,7 +44,9 @@ while game_is_on:
     # if the snake head (first turtle) is less than 15 pixels
     # away from the food then
     if snake.head.distance(food) < COLLISION_DISTANCE:
+        # function call to randomly assign the food location on the window
         food.new_location()
+        # increase the score after the snake head collides with the food
         scoreboard.increase_score()
 # screen doesn't close automatically
 screen.exitonclick()
