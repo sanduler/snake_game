@@ -32,7 +32,7 @@ class Scoreboard(Turtle):
         """this function is responsible for printing the score
         and aligning and font"""
         self.clear()
-        self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONTS)
+        self.write(f"Score: {self.score} High Score: {self.high_score}", align=ALIGNMENT, font=FONTS)
 
     # def game_over(self):
     #     """Game over function which is called when the user crashes into the wall

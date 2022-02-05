@@ -1,5 +1,7 @@
 from turtle import Turtle
 
+import self as self
+
 START_POS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DIS = 20
 
@@ -82,5 +84,14 @@ class Snake:
     def extend(self):
         """extend the snake by adding a segment to the tail"""
         self.add_snake(self.snake_segment[-1].position())
+
+    def reset_snake(self):
+        """resets the snake and creates a new snake after reset in scoreboard"""
+        for seg in self.snake_segment:
+            seg.goto(1000, 1000)
+        self.snake_segment.clear()
+        self.create_snake()
+        self.head = self.snake_segment[0]
+
 
 
