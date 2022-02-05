@@ -61,6 +61,7 @@ while game_is_on:
         # scoreboard.game_over()
         scoreboard.reset()
         snake.reset_snake()
+        food.new_location()
 
     # for loop to loop through all the parts that were added as the results of the game
     for segment in snake.snake_segment[1:]:
@@ -72,5 +73,6 @@ while game_is_on:
             # scoreboard.game_over()
             scoreboard.reset()
             snake.reset_snake()
+            food.new_location()
 # screen doesn't close automatically
 screen.exitonclick()

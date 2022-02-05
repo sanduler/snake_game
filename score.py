@@ -17,6 +17,7 @@ class Scoreboard(Turtle):
         self.score = 0
         # high score of game
         self.high_score = 0
+        self.read_high_score()
         # lift up the pen so it wont draw
         self.penup()
         # set the color to white
@@ -46,8 +47,7 @@ class Scoreboard(Turtle):
         on what the user scored in the current game."""
         if self.score > self.high_score:
             self.high_score = self.score
-            with open("high_score_data.txt", mode="w") as file:
-                file.write(str(self.high_score))
+            self.write_high_score()
         self.score = 0
         self.update()
 
@@ -56,3 +56,11 @@ class Scoreboard(Turtle):
         updating then clearing the previous score"""
         self.score += 1
         self.update()
+
+    def write_high_score(self):
+        with open("high_score_data.txt", mode="w") as file:
+            file.write(str(self.high_score))
+
+    def read_high_score(self):
+        with open("high_score_data.txt", mode="r") as file:
+            self.high_score = int(file.read())
