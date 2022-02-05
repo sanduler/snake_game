@@ -27,6 +27,7 @@ food = Food()
 # create the scoreboard to be displayed on top of the screen.
 scoreboard = Scoreboard()
 
+# keys for game
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
@@ -35,7 +36,6 @@ screen.onkey(snake.right, "Right")
 
 # while the game is on the while loop will continue to work
 game_is_on = True
-
 while game_is_on:
     # set the screen to update after the movement has been run
     screen.update()
