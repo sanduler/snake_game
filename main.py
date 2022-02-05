@@ -40,7 +40,7 @@ while game_is_on:
     # set the screen to update after the movement has been run
     screen.update()
     # create a small delay
-    time.sleep(0.1)
+    time.sleep(0.09)
     snake.movement()
 
     # detect collisions with Food
@@ -61,13 +61,10 @@ while game_is_on:
         scoreboard.game_over()
 
     # for loop to loop through all the parts that were added as the results of the game
-    for segment in snake.snake_segment:
-        # bypass the head detection
-        if segment == snake.head:
-            pass
+    for segment in snake.snake_segment[1:]:
         # if the snake head is in the proximity of less than 10 pixels then set the game to been
         # over and print the game is over.
-        elif snake.head.distance(segment) < 10:
+        if snake.head.distance(segment) < 10:
             game_is_on = False
             # call the message that the game is over.
             scoreboard.game_over()
